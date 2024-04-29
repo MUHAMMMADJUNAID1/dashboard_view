@@ -26,8 +26,7 @@ class _DashBoardViewState extends State<DashBoardView> {
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.sizeOf(context);
-    return SafeArea(
-        child: Scaffold(
+    return Scaffold(
       body: Container(
         height: double.infinity,
         width: double.infinity,
@@ -120,7 +119,7 @@ class _DashBoardViewState extends State<DashBoardView> {
             ),
             Positioned(
               left: 45,
-              bottom: 338,
+              bottom: 370,
               child: GestureDetector(
                 onTap: () {},
                 child: Text(
@@ -135,7 +134,7 @@ class _DashBoardViewState extends State<DashBoardView> {
             ),
             Positioned(
               right: 45,
-              bottom: 338,
+              bottom: 370,
               child: GestureDetector(
                 onTap: () {},
                 child: Text(
@@ -250,6 +249,6 @@ class _DashBoardViewState extends State<DashBoardView> {
       //       )
       //     ],
       //   ),
-    ));
+    );
   }
 }
