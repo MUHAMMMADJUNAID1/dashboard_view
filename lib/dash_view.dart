@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -52,10 +52,10 @@ class _DashBoardViewState extends State<DashBoardView> {
                     children: [
                       SvgPicture.asset('assets/img/leadbtn.svg'),
                       SizedBox(
-                        width: 30.w,
+                        width: 35.w,
                       ),
                       Text(
-                        '    MAQUILLAGE \nCOIFFURE MARIEE',
+                        '     MAQUILLAGE  \nCOIFFURE MARIEE',
                         style: TextStyle(
                             fontSize: 20.sp,
                             color: Colors.white,
@@ -64,7 +64,7 @@ class _DashBoardViewState extends State<DashBoardView> {
                     ],
                   ),
                   SizedBox(
-                    height: 29.h,
+                    height: 5.h,
                   ),
                   CarouselSlider(
                     items: _imageList
@@ -72,13 +72,13 @@ class _DashBoardViewState extends State<DashBoardView> {
                           (image) => Center(
                             child: Image.asset(
                               image,
-                              width: 200.w,
+                              width: media.width,
                             ),
                           ),
                         )
                         .toList(),
                     options: CarouselOptions(
-                        height: 150.h,
+                        height: 200.h,
                         onPageChanged: (index, reason) {
                           setState(() {
                             _currentIndex = index;
@@ -86,7 +86,7 @@ class _DashBoardViewState extends State<DashBoardView> {
                         }),
                   ),
                   SizedBox(
-                    height: 20.h,
+                    height: 15.h,
                   ),
                   Center(
                     child: DotsIndicator(
@@ -94,6 +94,7 @@ class _DashBoardViewState extends State<DashBoardView> {
                       dotsCount: _imageList.length,
                       position: _currentIndex,
                       decorator: DotsDecorator(
+                        spacing: const EdgeInsets.all(3),
                         activeSize: const Size(4, 4),
                         size: const Size(4, 4),
                         color: Colors.grey, // Inactive dot color
@@ -104,6 +105,23 @@ class _DashBoardViewState extends State<DashBoardView> {
                       ),
                     ),
                   ),
+                  Row(
+                    children: [
+                      Image.asset(
+                        'assets/img/time.png',
+                        color: Colors.white,
+                        height: 20,
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      const Text('60 min',
+                          style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white))
+                    ],
+                  )
                 ],
               ),
               Positioned(
