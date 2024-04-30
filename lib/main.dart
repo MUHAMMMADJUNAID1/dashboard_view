@@ -5,11 +5,11 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() => runApp(
-       DevicePreview(
-       enabled: !kReleaseMode,
-      builder: (context) =>
+      // DevicePreview(
+      //    enabled: !kReleaseMode,
+      //   builder: (context) =>
       const MyApp(), // Wrap your app
-       ),
+      //   ),
     );
 
 class MyApp extends StatelessWidget {
