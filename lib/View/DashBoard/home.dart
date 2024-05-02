@@ -6,6 +6,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../Common/bottomContainer.dart';
+
 class HomeView extends StatefulWidget {
    const HomeView({super.key});
 
@@ -187,115 +189,129 @@ class _HomeViewState extends State<HomeView> {
                   ),
                 ),
                 SizedBox(height: 10.h,),
-
-                GridView.builder(gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                  mainAxisSpacing: 10.0,
-                                    // Spacing between rows
-                              crossAxisSpacing: 0.0,
-                ),
-                            padding: const EdgeInsets.all(0),
-                physics: const NeverScrollableScrollPhysics(),
-                  itemCount: gridImage.length,
-                  shrinkWrap: true,
-
-                  itemBuilder: (context, index) {
-                    return Container(
-                  width: 200.w,
-                  height: 240.h,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/img/bottomCard.png', ),
-
-                    ),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 40),
-                    child:
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            SizedBox(
-                              height: 90.h, width: 110.w,
-                              child: Stack(
-                                children: [
-                                  Positioned(
-                                    top: 10,
-                                    left: 5,
-                                    child: Image.asset(
-                                      'assets/img/g1.png',
-                                      width: 90,
-                                      height: 90,
-                                    ),
-                                  ),
-                                  Positioned(
-                                    right: -2,
-                                    top: 3,
-                                    child: SvgPicture.asset(
-                                      'assets/img/redheart.svg',
-                                    ),
-                                  ),
-
-                                ],
-                              ),
-                            ),
-                         Column(
-                           crossAxisAlignment: CrossAxisAlignment.start,
-                           children: [
-                             Text(
-                               'Senior & Junior',
-                               style: TextStyle(
-                                 fontSize: 13.sp,
-                                 fontWeight: FontWeight.normal,
-                                 color: Colors.white,
-                               ),
-                             ),
-                             Text(
-                               'Maquillage + coiffure',
-                               style: TextStyle(
-                                 fontSize: 10.sp,
-                                 fontWeight: FontWeight.bold,
-                                 color: Colors.white,
-                               ),
-                             ),
-                             Text(
-                               '250,00 €',
-                               style: TextStyle(
-                                 fontSize: 13.sp,
-                                 fontWeight: FontWeight.w200,
-                                 color: Colors.white,
-                               ),
-                             ),
-
-                           ],
-                         ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Image.asset(
-                                  'assets/img/time.png',
-                                  color: Colors.white,
-                                  height: 20.h,
-                                ),
-                                SizedBox(
-                                  width: 5.w,
-                                ),
-                                Text('60 min',
-                                    style: TextStyle(
-                                        fontSize: 13.sp,
-                                        fontWeight: FontWeight.w600,
-                                        color: Colors.white)),
-                              ],
-                            ),
-
-                          ],
-                        ),
-
-                    ),
-                  );
-                  },
-                ),
+const Row(
+  mainAxisAlignment:MainAxisAlignment.spaceAround,
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    BottomContainer(),
+    BottomContainer(),
+  ],
+),
+               const  Row(
+                  mainAxisAlignment:MainAxisAlignment.spaceAround,
+                  children: [
+                    BottomContainer(),
+                    BottomContainer(),
+                  ],
+                )
+                // GridView.builder(gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                //     crossAxisCount: 2,
+                //   mainAxisSpacing: 10.0,
+                //                     // Spacing between rows
+                //               crossAxisSpacing: 0.0,
+                // ),
+                //             padding: const EdgeInsets.all(0),
+                // physics: const NeverScrollableScrollPhysics(),
+                //   itemCount: gridImage.length,
+                //   shrinkWrap: true,
+                //
+                //   itemBuilder: (context, index) {
+                //     return Container(
+                //   width: 165.w,
+                //   height: 240.h,
+                //   decoration: const BoxDecoration(
+                //     image: DecorationImage(
+                //       image: AssetImage('assets/img/bottomCard.png', ),
+                //
+                //     ),
+                //   ),
+                //   child: Padding(
+                //     padding: const EdgeInsets.only(left: 40),
+                //     child:
+                //         Column(
+                //           crossAxisAlignment: CrossAxisAlignment.start,
+                //           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                //           children: [
+                //             SizedBox(
+                //               height: 90.h, width: 110.w,
+                //               child: Stack(
+                //                 children: [
+                //                   Positioned(
+                //                     top: 10,
+                //                     left: 5,
+                //                     child: Image.asset(
+                //                       'assets/img/g1.png',
+                //                       width: 90,
+                //                       height: 90,
+                //                     ),
+                //                   ),
+                //                   Positioned(
+                //                     right: -2,
+                //                     top: 3,
+                //                     child: SvgPicture.asset(
+                //                       'assets/img/redheart.svg',
+                //                     ),
+                //                   ),
+                //
+                //                 ],
+                //               ),
+                //             ),
+                //          Column(
+                //            crossAxisAlignment: CrossAxisAlignment.start,
+                //            children: [
+                //              Text(
+                //                'Senior & Junior',
+                //                style: TextStyle(
+                //                  fontSize: 13.sp,
+                //                  fontWeight: FontWeight.normal,
+                //                  color: Colors.white,
+                //                ),
+                //              ),
+                //              Text(
+                //                'Maquillage + coiffure',
+                //                style: TextStyle(
+                //                  fontSize: 10.sp,
+                //                  fontWeight: FontWeight.bold,
+                //                  color: Colors.white,
+                //                ),
+                //              ),
+                //              Text(
+                //                '250,00 €',
+                //                style: TextStyle(
+                //                  fontSize: 13.sp,
+                //                  fontWeight: FontWeight.w200,
+                //                  color: Colors.white,
+                //                ),
+                //              ),
+                //
+                //            ],
+                //          ),
+                //             Row(
+                //               mainAxisAlignment: MainAxisAlignment.start,
+                //               children: [
+                //                 Image.asset(
+                //                   'assets/img/time.png',
+                //                   color: Colors.white,
+                //                   height: 20.h,
+                //                 ),
+                //                 SizedBox(
+                //                   width: 5.w,
+                //                 ),
+                //                 Text('60 min',
+                //                     style: TextStyle(
+                //                         fontSize: 13.sp,
+                //                         fontWeight: FontWeight.w600,
+                //                         color: Colors.white)),
+                //               ],
+                //             ),
+                //
+                //           ],
+                //         ),
+                //
+                //     ),
+                //   );
+                //   },
+                // ),
 
 
                 ]
