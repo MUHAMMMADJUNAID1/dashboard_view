@@ -10,6 +10,8 @@ class BottomContainer extends StatelessWidget {
     return Container(
       width: 165.w,
       height: 225.h,
+      padding: const EdgeInsets.all(0),
+      margin: const EdgeInsets.all(0),
       decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage(
