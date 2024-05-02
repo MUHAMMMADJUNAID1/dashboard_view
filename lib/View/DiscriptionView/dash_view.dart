@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class DashBoardView extends StatefulWidget {
-  DashBoardView({super.key});
+  const DashBoardView({super.key});
 
   @override
   State<DashBoardView> createState() => _DashBoardViewState();
