@@ -6,22 +6,28 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class HomeView extends StatelessWidget {
-   HomeView({super.key});
+class HomeView extends StatefulWidget {
+   const HomeView({super.key});
 
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
   List gridImage = [
     'assets/img/g1.png',
     'assets/img/g2.png',
     'assets/img/g3.png',
     'assets/img/g2.png',
   ];
+
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.sizeOf(context);
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-          fit: BoxFit.fitHeight,
+          fit: BoxFit.fill,
           image: AssetImage('assets/img/bg2.png'),
         ),
       ),
@@ -45,7 +51,7 @@ class HomeView extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            'Choix de la prestation',
+                            'Choir de la prestation',
                             style: TextStyle(
                               fontSize: 20.sp,
                               fontWeight: FontWeight.bold,
@@ -138,7 +144,7 @@ class HomeView extends StatelessWidget {
                               ),
                             ),
                             Positioned(
-                              left: 65,
+                              left: 68,
                               bottom: 15,
                               child: Image.asset(
                                 'assets/img/road.png',
@@ -181,19 +187,21 @@ class HomeView extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 10.h,),
-                
+
                 GridView.builder(gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    crossAxisSpacing: 0,
-                    mainAxisSpacing: 0),
-padding: const EdgeInsets.all(0),
-physics: const NeverScrollableScrollPhysics(),
+                  mainAxisSpacing: 10.0,
+                                    // Spacing between rows
+                              crossAxisSpacing: 0.0,
+                ),
+                            padding: const EdgeInsets.all(0),
+                physics: const NeverScrollableScrollPhysics(),
                   itemCount: gridImage.length,
                   shrinkWrap: true,
+
                   itemBuilder: (context, index) {
-                  var img = gridImage[index];
                     return Container(
-                  width: 165.w,
+                  width: 200.w,
                   height: 240.h,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
