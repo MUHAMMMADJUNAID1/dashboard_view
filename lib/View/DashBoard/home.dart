@@ -132,7 +132,7 @@ class _HomeViewState extends State<HomeView> {
                         ),
                       ),
                       SizedBox(
-                        height: 500.h,
+                        height: 600.h,
                         width: media.width,
                         child: Stack(
                           children: [
@@ -193,47 +193,45 @@ class _HomeViewState extends State<HomeView> {
                             ),
                             Positioned(
                               top: 80,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.center,
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(top: 25.0),
-                                        child: BottomContainer(),
-                                      ),
-                                      SizedBox(
-                                        width: 30.w,
-                                      ),
-                                      BottomContainer(),
-                                    ],
+                                  const Padding(
+                                    padding: EdgeInsets.only(top: 25.0),
+                                    child: BottomContainer(),
                                   ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(top: 25),
-                                        child: BottomContainer(),
-                                      ),
-                                      SizedBox(
-                                        width: 25.w,
-                                      ),
-                                      BottomContainer(),
-                                    ],
+                                  SizedBox(
+                                    width: 15.w,
                                   ),
+                                  const BottomContainer(),
+                                ],
+                              ),
+                            ),
+                            Positioned(
+                              top: 285,
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Padding(
+                                    padding: EdgeInsets.only(top: 40),
+                                    child: BottomContainer(),
+                                  ),
+                                  SizedBox(
+                                    width: 15.w,
+                                  ),
+                                  const BottomContainer(),
                                 ],
                               ),
                             ),
                           ],
                         ),
+                      ),
+                      SizedBox(
+                        height: 60.h,
                       ),
                     ],
                   ),
@@ -350,6 +348,12 @@ class _HomeViewState extends State<HomeView> {
               ],
             ),
           ),
+        ),
+        bottomNavigationBar: Image.asset(
+          'assets/img/tabbar.png',
+          width: double.infinity,
+          fit: BoxFit.fill,
+          height: 100.h,
         ),
       ),
     );
