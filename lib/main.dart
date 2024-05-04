@@ -1,15 +1,15 @@
-import 'package:dashboard_app/View/DashBoard/home.dart';
-import 'package:device_preview/device_preview.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter/foundation.dart';
+
+import 'View/main_tab.dart';
 
 void main() => runApp(
-       DevicePreview(
-        enabled: !kReleaseMode,
-     builder: (context) =>
+      //DevicePreview(
+      // enabled: !kReleaseMode,
+      //   builder: (context) =>
       const MyApp(), // Wrap your app
-          ),
+      // ),
     );
 
 class MyApp extends StatelessWidget {
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: const HomeView(),
+      child: const MainTab(),
     );
   }
 }
